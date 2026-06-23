@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Paper Title",
+    "authors": "Author One, Your Name, Author Three",
+    "venue": "Conference Name 2026",
+    "year": "2026",
+    "links": [
+      { "label": "PDF",   "href": "#" },
+      { "label": "arXiv", "href": "#" }
+    ]
+  }
+]
