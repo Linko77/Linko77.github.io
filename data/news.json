@@ -3,24 +3,6 @@
     "date": "2026 · 06",
     "emoji": "🏅",
     "tag": "Award",
-    "html": "Received the <a href=\"#\">Academic Excellence Award</a> for the spring semester."
-  },
-  {
-    "date": "2026 · 05",
-    "emoji": "🎉",
-    "tag": "Project",
-    "html": "Finished my <a href=\"#\">cryptography engineering final project</a> — a from-scratch implementation of an authenticated-encryption scheme."
-  },
-  {
-    "date": "2026 · 03",
-    "emoji": "🎤",
-    "tag": "Talk",
-    "html": "Gave a short talk on number-theoretic foundations of RSA at a student reading group."
-  },
-  {
-    "date": "2025 · 11",
-    "emoji": "💼",
-    "tag": "Start",
-    "html": "Joined a research group as an undergraduate assistant, working on systems-adjacent problems."
+    "html": "Received the <a href=\"#\">Academic Excellence Award</a> for the spring semester. (I hope it's true🥲)"
   }
 ]

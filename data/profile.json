@@ -1,12 +1,12 @@
 {
   "name": "Yu-Han Tsai",
   "role": "Undergraduate Student",
-  "university": "National Yang Ming Chiao Tung University",
-  "description": "Personal site of Your Name — undergraduate, interests, projects.",
+  "university": "NYCU CS",
+  "description": "Personal site of Yu-Han Tsai — undergraduate at NYCU",
   "photo": "images/profile.jpg",
   "bio": [
-    "I'm an undergraduate interested in <strong>cryptography</strong>, computer systems, and the places where engineering meets writing. Right now I'm working through coursework in security and computer architecture while writing about the things I learn.",
-    "One sentence about what you're looking for or what drives you — e.g. \"I'm looking for summer research in applied cryptography.\""
+    "I'm a third-year undergraduate student in the <a href=\"https://www.cs.nycu.edu.tw/\">Department of Computer Science</a> at <a href=\"https://www.nycu.edu.tw/nycu/ch/index\">National Yang Ming Chiao Tung University</a>. This personal website is not complete yet so some parts may keep empty. I will finish this website in the not-too-distant future",
+    "You can find me by following ways:"
   ],
   "links": [
     { "label": "Email",    "href": "mailto:sinlinko77.cs13@nycu.edu.tw" },

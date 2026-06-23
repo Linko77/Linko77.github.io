@@ -201,7 +201,7 @@
 
 <script>
 (async () => {
-  const get = url => fetch(url).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  const get = url => fetch(url, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
 
   const [profile, news, papers, projects] = await Promise.all([
     get('data/profile.json'),
@@ -247,7 +247,7 @@
     document.getElementById('news-feed').innerHTML = news.map(e => `
       <div class="entry">
         <time>${e.date}</time>
-        <p><span class="tag">${e.emoji} ${e.tag}.</span> ${e.html}</p>
+        <p><span class="tag">${e.emoji} ${e.tag}:</span> ${e.html}</p>
       </div>`).join('');
     document.getElementById('news').style.display = '';
   }
