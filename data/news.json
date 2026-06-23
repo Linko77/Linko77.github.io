@@ -1,8 +1,37 @@
 [
   {
-    "date": "2026 · 06",
+    "month": "Jun",
+    "year": "2026",
     "emoji": "🏅",
     "tag": "Award",
     "html": "Received the <a href=\"#\">Academic Excellence Award</a> for the spring semester. (I hope it's true🥲)"
+  },
+  {
+    "month": "May",
+    "year": "2026",
+    "emoji": "🎉",
+    "tag": "Project",
+    "html": "Finished my <a href=\"#\">cryptography engineering final project</a> — a from-scratch implementation of an authenticated-encryption scheme."
+  },
+  {
+    "month": "Jan",
+    "year": "2026",
+    "emoji": "🎉",
+    "tag": "Project",
+    "html": "Built a simple <a href=\"#\">x86-64 assembler</a> as a side project during winter break."
+  },
+  {
+    "month": "Nov",
+    "year": "2025",
+    "emoji": "💼",
+    "tag": "Start",
+    "html": "Joined a research group as an undergraduate assistant, working on systems-adjacent problems."
+  },
+  {
+    "month": "Sep",
+    "year": "2025",
+    "emoji": "🏅",
+    "tag": "Award",
+    "html": "Received a merit scholarship for academic performance in the 2024–25 academic year."
   }
 ]

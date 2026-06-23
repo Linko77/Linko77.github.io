@@ -1,8 +1,9 @@
 [
   {
-    "title": "Paper Title",
-    "authors": "Author One, Your Name, Author Three",
-    "venue": "Conference Name 2026",
+    "title": "Upcoming Paper",
+    "authors": "Nobody",
+    "venue": "Conference 2026",
+    "month": "Jun",
     "year": "2026",
     "links": [
       { "label": "PDF",   "href": "#" },

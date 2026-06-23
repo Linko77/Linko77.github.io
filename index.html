@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Site</title>
 <meta name="description" content="">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,20 +90,22 @@
   }
 
   /* ---------- news ---------- */
-  .feed{position:relative;padding-left:20px}
-  .feed::before{
-    content:"";position:absolute;left:3px;top:6px;bottom:6px;width:1px;background:var(--line);
+  .news-filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .filter-btn{
+    display:inline-flex;align-items:center;gap:4px;
+    font-size:13px;font-weight:500;padding:3px 12px;border-radius:6px;
+    border:1px solid transparent;background:transparent;color:var(--muted);
+    cursor:pointer;transition:.15s;
   }
-  .entry{position:relative;padding-bottom:18px}
-  .entry:last-child{padding-bottom:0}
-  .entry::before{
-    content:"";position:absolute;left:-20px;top:7px;
-    width:7px;height:7px;border-radius:50%;background:var(--accent);
-    box-shadow:0 0 0 3px var(--bg);
-  }
-  .entry time{font-size:12px;font-weight:500;color:var(--faint);display:block;margin-bottom:2px}
-  .entry p{font-size:15px;color:var(--muted)}
-  .entry .tag{font-weight:600;color:var(--ink)}
+  .filter-btn:hover{background:#f1f5f9;color:var(--ink)}
+  .filter-btn.active{background:var(--accent);color:#fff}
+  .feed-scroll{max-height:320px;overflow-y:auto;padding-right:4px}
+  .feed-scroll::-webkit-scrollbar{width:4px}
+  .feed-scroll::-webkit-scrollbar-track{background:transparent}
+  .feed-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+  .news-list{list-style:disc;padding-left:20px}
+  .news-list .entry{font-size:15px;color:var(--muted);line-height:1.8;padding:1px 0}
+  .entry-date{font-weight:600;color:var(--ink)}
 
   /* ---------- papers ---------- */
   .paper{padding:14px 0;border-bottom:1px solid var(--line)}
@@ -141,7 +144,7 @@
   /* ---------- responsive ---------- */
   @media(max-width:560px){
     .hero{grid-template-columns:1fr;gap:20px}
-    .hero-photo{width:100%;aspect-ratio:3/1}
+    .hero-photo{width:96px;aspect-ratio:4/5;justify-self:start}
     .hero-initials{font-size:28px}
     .hero h1{font-size:26px}
     nav ul{gap:16px}
@@ -244,11 +247,36 @@
 
   // --- news ---
   if (news.length) {
-    document.getElementById('news-feed').innerHTML = news.map(e => `
-      <div class="entry">
-        <time>${e.date}</time>
-        <p><span class="tag">${e.emoji} ${e.tag}:</span> ${e.html}</p>
-      </div>`).join('');
+    const tagEmoji = {};
+    news.forEach(e => { if (!tagEmoji[e.tag]) tagEmoji[e.tag] = e.emoji; });
+    const types = ['All', ...new Set(news.map(e => e.tag))];
+
+    const filtersHtml = `<div class="news-filters">${
+      types.map(t => `<button class="filter-btn${t === 'All' ? ' active' : ''}" data-type="${t}">${
+        t === 'All' ? '🗂️ All' : `${tagEmoji[t]} ${t}`
+      }</button>`).join('')
+    }</div>`;
+
+    const entriesHtml = `<div class="feed-scroll"><ul class="news-list">${
+      news.map(e => `
+        <li class="entry" data-type="${e.tag}">
+          <span class="entry-date">${e.month} ${e.year}:</span> ${e.html}
+        </li>`).join('')
+    }</ul></div>`;
+
+    document.getElementById('news-feed').innerHTML = filtersHtml + entriesHtml;
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const type = btn.dataset.type;
+        document.querySelectorAll('.entry').forEach(entry => {
+          entry.style.display = (type === 'All' || entry.dataset.type === type) ? '' : 'none';
+        });
+      });
+    });
+
     document.getElementById('news').style.display = '';
   }
 
@@ -258,7 +286,7 @@
       <div class="paper">
         <h3>${p.title}</h3>
         <p class="authors">${p.authors}</p>
-        <p class="venue">${p.venue}</p>
+        <p class="venue">${p.month} ${p.year} &middot; ${p.venue}</p>
         <div class="clinks">
           ${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}
         </div>
@@ -275,7 +303,7 @@
           : `<div class="thumb">${p.thumb || 'IMG'}</div>`}
         <div>
           <h3>${p.title}</h3>
-          <p class="meta">${p.year} &middot; ${p.tech}</p>
+          <p class="meta">${p.month} ${p.year} &middot; ${p.tech}</p>
           <p>${p.description}</p>
           <div class="clinks">
             ${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}

@@ -1,6 +1,7 @@
 [
   {
     "title": "Project One",
+    "month": "Jun",
     "year": "2026",
     "tech": "C / x86-64",
     "description": "One or two sentences on what it does and what was hard about it. Keep it concrete — the technique, the result, the why.",
@@ -13,6 +14,7 @@
   },
   {
     "title": "Project Two",
+    "month": "Mar",
     "year": "2025",
     "tech": "Python",
     "description": "Another project. If you have a class project, a tool you built, or a paper you reproduced, it goes here.",
