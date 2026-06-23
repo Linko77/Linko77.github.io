@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ============================================================
+     EDIT THIS: page title shows in the browser tab + search results
+     ============================================================ -->
+<title>Your Name</title>
+<meta name="description" content="Personal site of Your Name — undergraduate, interests, projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#fbfaf7;        /* warm paper */
+    --ink:#1a1c22;       /* near-black */
+    --muted:#6b6f76;     /* secondary text */
+    --faint:#9a9da3;     /* tertiary */
+    --accent:#345b9c;    /* restrained indigo-blue */
+    --accent-soft:#eaeff7;
+    --line:#e7e3da;      /* hairline */
+    --card:#ffffff;
+    --maxw:720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:2px}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .home{font-family:"Spectral",serif;font-weight:600;font-size:17px}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{
+    color:var(--muted);font-size:13px;font-weight:500;
+    font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;
+  }
+  nav ul a:hover{color:var(--ink);text-decoration:none}
+
+  /* ---------- hero ---------- */
+  header{padding:64px 0 40px}
+  .hero{display:flex;gap:32px;align-items:flex-start}
+  .hero-photo{
+    flex:0 0 132px;width:132px;height:132px;border-radius:50%;
+    object-fit:cover;border:1px solid var(--line);background:var(--accent-soft);
+  }
+  .hero h1{
+    font-family:"Spectral",serif;font-weight:600;
+    font-size:34px;line-height:1.1;letter-spacing:-.01em;margin-bottom:6px;
+  }
+  .hero .role{color:var(--muted);font-size:15px;margin-bottom:18px}
+  .hero .role strong{color:var(--ink);font-weight:600}
+  .hero .bio{font-size:15.5px;color:#34373d;max-width:46ch}
+  .hero .bio + .bio{margin-top:10px}
+
+  /* ---------- link row ---------- */
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .links a{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;
+    color:var(--ink);border:1px solid var(--line);background:var(--card);
+    padding:5px 11px;border-radius:6px;transition:.15s;
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;transform:translateY(-1px)}
+
+  /* ---------- sections ---------- */
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.12em;color:var(--faint);margin-bottom:22px;
+  }
+
+  /* ---------- news / changelog ---------- */
+  .feed{position:relative;padding-left:20px}
+  .feed::before{
+    content:"";position:absolute;left:3px;top:6px;bottom:6px;width:1px;background:var(--line);
+  }
+  .entry{position:relative;padding-bottom:20px}
+  .entry:last-child{padding-bottom:0}
+  .entry::before{
+    content:"";position:absolute;left:-20px;top:7px;
+    width:7px;height:7px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 0 3px var(--bg);
+  }
+  .entry time{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--faint);
+    display:block;margin-bottom:2px;
+  }
+  .entry p{font-size:15px}
+  .entry .tag{font-weight:600}
+
+  /* ---------- projects ---------- */
+  .cards{display:grid;gap:16px}
+  .card{
+    display:flex;gap:16px;align-items:flex-start;
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    padding:16px;transition:.15s;
+  }
+  .card:hover{border-color:#d8d3c7;box-shadow:0 4px 16px rgba(26,28,34,.05)}
+  .card .thumb{
+    flex:0 0 84px;width:84px;height:84px;border-radius:7px;
+    background:var(--accent-soft);object-fit:cover;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"IBM Plex Mono",monospace;color:var(--accent);font-size:11px;
+  }
+  .card h3{font-family:"Spectral",serif;font-size:18px;font-weight:600;margin-bottom:3px}
+  .card .meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);margin-bottom:7px}
+  .card p{font-size:14px;color:#41444a;margin-bottom:9px}
+  .card .clinks{display:flex;gap:12px;flex-wrap:wrap}
+  .card .clinks a{font-family:"IBM Plex Mono",monospace;font-size:12px}
+
+  /* ---------- footer ---------- */
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
+  footer a{color:var(--muted)}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:560px){
+    .hero{flex-direction:column;gap:20px}
+    .hero-photo{width:104px;height:104px;flex-basis:104px}
+    .hero h1{font-size:28px}
+    nav ul{gap:16px}
+    .card{flex-direction:column}
+    .card .thumb{width:100%;height:120px;flex-basis:auto}
+  }
+
+  /* load animation */
+  .fade{opacity:0;transform:translateY(8px);animation:rise .6s ease forwards}
+  .fade:nth-child(2){animation-delay:.05s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<nav>
+  <div class="wrap">
+    <a class="home" href="#">Your Name</a>
+    <ul>
+      <li><a href="#news">News</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================== HERO ============================== -->
+<header>
+  <div class="wrap">
+    <div class="hero fade">
+      <!-- EDIT: drop a square photo named profile.jpg next to this file,
+           or delete this <img> line if you'd rather not have a photo -->
+      <img class="hero-photo" src="profile.jpg" alt="Your Name"
+           onerror="this.style.display='none'">
+      <div>
+        <h1>Your Name</h1>
+        <p class="role">Undergraduate Student &middot; <strong>Your University</strong></p>
+        <p class="bio">
+          I'm an undergraduate interested in <strong>cryptography</strong>,
+          computer systems, and the places where engineering meets writing.
+          Right now I'm working through coursework in security and computer
+          architecture while writing about the things I learn.
+        </p>
+        <p class="bio">
+          One sentence about what you're looking for or what drives you —
+          e.g. "I'm looking for summer research in applied cryptography."
+        </p>
+
+        <!-- EDIT: keep the links you want, delete the rest -->
+        <div class="links">
+          <a href="mailto:you@example.com">Email</a>
+          <a href="cv.pdf">CV</a>
+          <a href="https://github.com/yourhandle">GitHub</a>
+          <a href="https://scholar.google.com/">Scholar</a>
+          <a href="https://linkedin.com/in/yourhandle">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== NEWS ============================== -->
+<!-- Newest first. Copy one .entry block to add an item.
+     Emoji convention: 🏅 award · 🎉 paper/acceptance · 💼 internship · 🎤 talk -->
+<section id="news">
+  <div class="wrap">
+    <p class="eyebrow">News</p>
+    <div class="feed">
+
+      <div class="entry">
+        <time>2026 · 06</time>
+        <p><span class="tag">🏅 Award.</span> Received the
+          <a href="#">Academic Excellence Award</a> for the spring semester.</p>
+      </div>
+
+      <div class="entry">
+        <time>2026 · 05</time>
+        <p><span class="tag">🎉 Project.</span> Finished my
+          <a href="#">cryptography engineering final project</a> — a from-scratch
+          implementation of an authenticated-encryption scheme.</p>
+      </div>
+
+      <div class="entry">
+        <time>2026 · 03</time>
+        <p><span class="tag">🎤 Talk.</span> Gave a short talk on
+          number-theoretic foundations of RSA at a student reading group.</p>
+      </div>
+
+      <div class="entry">
+        <time>2025 · 11</time>
+        <p><span class="tag">💼 Start.</span> Joined a research group as an
+          undergraduate assistant, working on systems-adjacent problems.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROJECTS ============================== -->
+<!-- Copy one .card block per project. The .thumb can be an <img> instead
+     of the text placeholder — see the comment inside the first card. -->
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Projects</p>
+    <div class="cards">
+
+      <div class="card">
+        <!-- To use a real image: replace the <div class="thumb">…</div>
+             with: <img class="thumb" src="images/project1.png" alt=""> -->
+        <div class="thumb">IMG</div>
+        <div>
+          <h3>Project One</h3>
+          <p class="meta">2026 · C / x86-64</p>
+          <p>One or two sentences on what it does and what was hard about it.
+             Keep it concrete — the technique, the result, the why.</p>
+          <div class="clinks">
+            <a href="#">Code</a>
+            <a href="#">Writeup</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">IMG</div>
+        <div>
+          <h3>Project Two</h3>
+          <p class="meta">2025 · Python</p>
+          <p>Another project. If you have a class project, a tool you built,
+             or a paper you reproduced, it goes here.</p>
+          <div class="clinks">
+            <a href="#">Code</a>
+            <a href="#">Demo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="wrap">
+    <p>© 2026 Your Name · Built as a static site, hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+</body>
+</html>
