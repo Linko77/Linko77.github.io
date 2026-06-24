@@ -4,34 +4,48 @@
     "year": "2026",
     "emoji": "🏅",
     "tag": "Award",
-    "html": "Received the <a href=\"#\">Academic Excellence Award</a> for the spring semester. (I hope it's true🥲)"
+    "html": "Received the <a href=\"#\">Academic Excellence Award</a> for the spring semester (I hope it's true🥲)"
   },
   {
     "month": "May",
-    "year": "2026",
-    "emoji": "🎉",
-    "tag": "Project",
-    "html": "Finished my <a href=\"#\">cryptography engineering final project</a> — a from-scratch implementation of an authenticated-encryption scheme."
-  },
-  {
-    "month": "Jan",
-    "year": "2026",
-    "emoji": "🎉",
-    "tag": "Project",
-    "html": "Built a simple <a href=\"#\">x86-64 assembler</a> as a side project during winter break."
-  },
-  {
-    "month": "Nov",
     "year": "2025",
+    "emoji": "🎉",
+    "tag": "Project",
+    "html": "Finished <a href=\"https://github.com/Linko77/AI-Trading-Agent-on-Options-and-Futures\">Intro. to Artificial Intelligence final project</a> — AI Trading Agent on Options and Futures"
+  },
+  {
+    "month": "Sep",
+    "year": "2024",
     "emoji": "💼",
     "tag": "Start",
-    "html": "Joined a research group as an undergraduate assistant, working on systems-adjacent problems."
+    "html": "Started B.S. in the <a href=\"https://www.cs.nycu.edu.tw/\">Department of Computer Science</a> at <a href=\"https://www.nycu.edu.tw/nycu/ch/index\">National Yang Ming Chiao Tung University</a> "
   },
   {
+    "month": "Mar",
+    "year": "2025",
+    "emoji": "🏅",
+    "tag": "Award",
+    "html": "Received <a href=\"https://calculus.math.nycu.edu.tw/113%E5%AD%B8%E5%B9%B4%E5%BA%A6%E7%AC%AC1%E5%AD%B8%E6%9C%9F%E5%BE%AE%E7%A9%8D%E5%88%86%E7%8D%8E%E5%BE%97%E7%8D%8E%E5%90%8D%E5%96%AE\">Caculus Award (微積分獎)</a>"
+  },
+    {
     "month": "Sep",
     "year": "2025",
     "emoji": "🏅",
     "tag": "Award",
-    "html": "Received a merit scholarship for academic performance in the 2024–25 academic year."
+    "html": "Received <a href=\"#\">Core Fundamental Course Award (核心基礎課程獎)</a> for Discrete Mathematics"
+  },
+      {
+    "month": "Apr",
+    "year": "2026",
+    "emoji": "💼",
+    "tag": "Start",
+    "html": "Joined <strong>NYCU Computational Photography Lab</strong> under <a href=\"https://yulunalexliu.github.io/\">Prof. Yu-Lun Liu</a>"
+  },
+      {
+    "month": "The",
+    "year": "end",
+    "emoji": "🥲",
+    "tag": "TBD",
+    "html": "114514 1919810"
   }
 ]
