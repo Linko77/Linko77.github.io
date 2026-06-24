@@ -223,8 +223,8 @@
   document.title = profile.name;
   document.querySelector('meta[name="description"]').content = profile.description || '';
   document.getElementById('nav-name').textContent = profile.name;
-  document.getElementById('footer-text').innerHTML =
-    `&copy; ${new Date().getFullYear()} ${profile.name} &middot; Built as a static site, hosted on GitHub Pages.`;
+  //document.getElementById('footer-text').innerHTML =
+    //`&copy; ${new Date().getFullYear()} ${profile.name} &middot; Built as a static site, hosted on GitHub Pages.`;
 
   const initials = profile.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
   const photoHtml = profile.photo
