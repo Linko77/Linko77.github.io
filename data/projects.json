@@ -1,25 +1,24 @@
 [
   {
-    "title": "Project One",
-    "month": "Jun",
-    "year": "2026",
-    "tech": "C / x86-64",
-    "description": "One or two sentences on what it does and what was hard about it. Keep it concrete — the technique, the result, the why.",
-    "image": null,
+    "title": "AI Trading Agent on Options and Futures",
+    "month": "May",
+    "year": "2025",
+    "tech": "Python",
+    "description": "NYCU 2025 Introduction to AI final project. This project explores the use of artificial intelligence to develop trading strategies for options and futures markets for stock by market data. We utilize fundamental data such as open, close, high, and low prices to build predictive models like Random Forest and LSTM for price forecasting. Additionally, we apply RL algorithms PPO to determine trading strategies.",
+    "image": "images/projects/AI-Trading-Agent-on-Options-and-Futures.png",
     "thumb": "IMG",
     "links": [
-      { "label": "Code",    "href": "#" },
-      { "label": "Writeup", "href": "#" }
+      { "label": "Code",    "href": "https://github.com/Linko77/AI-Trading-Agent-on-Options-and-Futures/tree/main" }
     ]
   },
   {
-    "title": "Project Two",
+    "title": "Upcoming project",
     "month": "Mar",
-    "year": "2025",
-    "tech": "Python",
-    "description": "Another project. If you have a class project, a tool you built, or a paper you reproduced, it goes here.",
+    "year": "2000",
+    "tech": "My Brain",
+    "description": "TBD",
     "image": null,
-    "thumb": "IMG",
+    "thumb": "TBD",
     "links": [
       { "label": "Code", "href": "#" },
       { "label": "Demo", "href": "#" }
