@@ -213,6 +213,12 @@
     get('data/projects.json').catch(() => []),
   ]);
 
+  const MONTHS = {Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
+  const byDate = (a, b) => (+b.year * 12 + MONTHS[b.month]) - (+a.year * 12 + MONTHS[a.month]);
+  news.sort(byDate);
+  papers.sort(byDate);
+  projects.sort(byDate);
+
   // --- profile ---
   document.title = profile.name;
   document.querySelector('meta[name="description"]').content = profile.description || '';
